@@ -37,17 +37,24 @@ let quotes = [
   }
 ];
 
-
 /***
  * `getRandomQuote` function
 ***/
+let numQuotes = quotes.length;
 
-
+function getRandomQuote(numQuotes){
+  return Math.floor(Math.random() * numQuotes);
+};
 
 /***
  * `printQuote` function
 ***/
-
+//calls getRandomQuote()
+//use the returned quote object to build a string of HTML and quote props
+//use the string to display a random quote in the browser
+function printQuote(){
+//create a variable to store random quote object returned from getRandomQuote()
+}
 
 
 /***
