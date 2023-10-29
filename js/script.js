@@ -45,9 +45,7 @@ let numQuotes = quotes.length;
 function getRandomQuote(numQuotes){
   return Math.floor(Math.random() * numQuotes);
 };
-let q = getRandomQuote(numQuotes);
-
-
+getRandomQuote(numQuotes);
 /***
  * `printQuote` function
 ***/
@@ -56,26 +54,22 @@ let q = getRandomQuote(numQuotes);
 //use the string to display a random quote in the browser*/
 
 //create a variable to store random quote object returned from getRandomQuote()
-let randomQuote = quotes[q];
+let randomQuote = quotes[getRandomQuote(numQuotes)];
 let html = `<p class="quote">${randomQuote.quote}</p>`+`<p class="source">${randomQuote.source}`;
 
 function printQuote(){
   
   if (randomQuote.citation !== undefined){
     html += `<span class="citation">${randomQuote.citation}</span>`;
-  } else {
-    html;
-  }
-  
-  if (randomQuote.year !== undefined){
+  } if (randomQuote.year !== undefined){
     html += `<span class="year">${randomQuote.year}</span>`;
   } else {
-    html;
+    html+= `</p>`
   }
   return html;
 }
 
-printQuote();
+printQuote(randomQuote);
 
 document.getElementById('quote-box').innerHTML= html;
 
