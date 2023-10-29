@@ -47,18 +47,37 @@ function getRandomQuote(numQuotes){
 };
 let q = getRandomQuote(numQuotes);
 
-//create a variable to store random quote object returned from getRandomQuote()
-let randomQuote = quotes[q];
 
 /***
  * `printQuote` function
 ***/
 //calls getRandomQuote()
 //use the returned quote object to build a string of HTML and quote props
-//use the string to display a random quote in the browser
-function printQuote(){
+//use the string to display a random quote in the browser*/
 
+//create a variable to store random quote object returned from getRandomQuote()
+let randomQuote = quotes[q];
+let html = `<p class="quote">${randomQuote.quote}</p>`+`<p class="source">${randomQuote.source}`;
+
+function printQuote(){
+  
+  if (randomQuote.citation !== undefined){
+    html += `<span class="citation">${randomQuote.citation}</span>`;
+  } else {
+    html;
+  }
+  
+  if (randomQuote.year !== undefined){
+    html += `<span class="year">${randomQuote.year}</span>`;
+  } else {
+    html;
+  }
+  return html;
 }
+
+printQuote();
+
+document.getElementById('quote-box').innerHTML= html;
 
 
 /***
