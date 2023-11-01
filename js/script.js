@@ -15,27 +15,32 @@ let quotes = [
     quote: "It's not at all important to get it right the first time. It's vitally important to get it right the last time.", 
     source: "Andrew Hunt & David Thomas", 
     citation:"Book / The Pragmatic Programmer",
-    year: 1999
+    year: 1999,
+    rating: "Rating: *****"
   },
   {
     quote: "Debugging is twice as hard as writing the code in the first place. Therefore, if you write the code as cleverly as possible, you are, by definition, not smart enough to debug it.", 
-    source: "Brian W. Kernighan"
+    source: "Brian W. Kernighan",
+    rating: "Rating: **"
   },
   {
     quote: "Any fool can write code that a computer can understand. Good programmers write code that humans can understand.", 
     source: "Martin Fowler",
-    citation:"Article"
+    citation:"Article",
+    rating: "Rating: ****"
   },
   {
     quote: "Programming isn't about what you know; it's about what you can figure out.", 
     source: "Chris Pine",
     citation: "Book / Learn to Program",
-    year: 2005
+    year: 2005,
+    rating: "Rating: ***"
   },
   {
     quote: "here are only two kinds of languages: the ones people complain about and the ones nobody uses.", 
     source: "Bjarne Stroustrup",
-    year: 1980
+    year: 1980,
+    rating: "Rating: *****"
   }
 ];
 
@@ -58,7 +63,7 @@ function getRandomQuote(){
 //create a variable to store random quote object returned from getRandomQuote()
 let randomQuote = quotes[getRandomQuote()]; //randomQuote is assigned to a quote with an index of a random number from the getRandomQuote function
 
-let html = `<p class="quote">${randomQuote.quote}</p>`+`<p class="source">${randomQuote.source}`; //template literal of two paragraph elements to be assigned to html
+let html = `<p class="quote">${randomQuote.quote}</p>`+`<p class="source">${randomQuote.source}` + `<p>${randomQuote.rating}`; //template literal of two paragraph elements to be assigned to html
 
 function printQuote(){
   
