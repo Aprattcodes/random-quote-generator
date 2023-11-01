@@ -73,30 +73,29 @@ function printQuote(){
 
   let html = `<p class="quote">${randomQuote.quote}</p>`+`<p class="source">${randomQuote.source}` + `<p>${randomQuote.rating}`; //template literal of two paragraph elements to be assigned to html
 
-  // if (randomQuote.citation !== undefined){ //if randomQuote's citation is not undefined, print string
-  //   html += `<span class="citation">${randomQuote.citation}</span>`; 
-  // } if (randomQuote.year !== undefined){ //if randomQuote's year is not undefined, print string
-  //   html += `<span class="year">${randomQuote.year}</span>`;
-  // } else {
-  //   html+= `</p>` //adss closing p element
-  // }
-  // return html; //returns html when caliing the printQuote() function
-  if (randomQuote.citation !== undefined) {
-    html += `<span class="citation">${randomQuote.citation}</span>`;
-  }
-  if (randomQuote.year !== undefined) {
+  if (randomQuote.citation !== undefined){ //if randomQuote's citation is not undefined, print string
+    html += `<span class="citation">${randomQuote.citation}</span>`; 
+  } if (randomQuote.year !== undefined){ //if randomQuote's year is not undefined, print string
     html += `<span class="year">${randomQuote.year}</span>`;
-  }
+  } else {
+    html+= `</p>` //adss closing p element
+   }
+  // return html; //returns html when caliing the printQuote() function
+  // if (randomQuote.citation !== undefined) {
+  //   html += `<span class="citation">${randomQuote.citation}</span>`;
+  // }
+  // if (randomQuote.year !== undefined) {
+  //   html += `<span class="year">${randomQuote.year}</span>`;
+  // }
 
-  // Close the HTML elements
-  html += `</p>`;
+  // // Close the HTML elements
+  // html += `</p>`;
 
   // Update the quote-box with the new quote
   document.getElementById('quote-box').innerHTML = html;
 
 }
-
-
+printQuote();
 /***
  * click event listener for the print quote button
  * DO NOT CHANGE THE CODE BELOW!!
