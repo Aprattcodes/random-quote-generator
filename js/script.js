@@ -23,7 +23,8 @@ let quotes = [
   },
   {
     quote: "Any fool can write code that a computer can understand. Good programmers write code that humans can understand.", 
-    source: "Martin Fowler"
+    source: "Martin Fowler",
+    citation:"Article"
   },
   {
     quote: "Programming isn't about what you know; it's about what you can figure out.", 
@@ -33,19 +34,20 @@ let quotes = [
   },
   {
     quote: "here are only two kinds of languages: the ones people complain about and the ones nobody uses.", 
-    source: "Bjarne Stroustrup"
+    source: "Bjarne Stroustrup",
+    year: 1980
   }
 ];
 
 /***
  * `getRandomQuote` function
 ***/
-let numQuotes = quotes.length;
+//let numQuotes = quotes.length;
 
-function getRandomQuote(numQuotes){
-  return Math.floor(Math.random() * numQuotes);
+function getRandomQuote(){
+  return Math.floor(Math.random() * quotes.length); //returns a random number between 0 and the maximum number of quotes
 };
-getRandomQuote(numQuotes);
+
 /***
  * `printQuote` function
 ***/
@@ -54,24 +56,25 @@ getRandomQuote(numQuotes);
 //use the string to display a random quote in the browser*/
 
 //create a variable to store random quote object returned from getRandomQuote()
-let randomQuote = quotes[getRandomQuote(numQuotes)];
-let html = `<p class="quote">${randomQuote.quote}</p>`+`<p class="source">${randomQuote.source}`;
+let randomQuote = quotes[getRandomQuote()]; //randomQuote is assigned to a quote with an index of a random number from the getRandomQuote function
+
+let html = `<p class="quote">${randomQuote.quote}</p>`+`<p class="source">${randomQuote.source}`; //template literal of two paragraph elements to be assigned to html
 
 function printQuote(){
   
-  if (randomQuote.citation !== undefined){
-    html += `<span class="citation">${randomQuote.citation}</span>`;
-  } if (randomQuote.year !== undefined){
+  if (randomQuote.citation !== undefined){ //if randomQuote's citation is not undefined, print string
+    html += `<span class="citation">${randomQuote.citation}</span>`; 
+  } if (randomQuote.year !== undefined){ //if randomQuote's year is not undefined, print string
     html += `<span class="year">${randomQuote.year}</span>`;
   } else {
-    html+= `</p>`
+    html+= `</p>` //adss closing p element
   }
-  return html;
+  return html; //returns html when caliing the printQuote() function
 }
 
-printQuote(randomQuote);
+printQuote(); //calls printquote function
 
-document.getElementById('quote-box').innerHTML= html;
+document.getElementById('quote-box').innerHTML= html; //sets printQuote function to change the HTML string by using innerHTML property
 
 
 /***
