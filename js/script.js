@@ -93,6 +93,10 @@ function printQuote(){
 
   // Update the quote-box with the new quote
   document.getElementById('quote-box').innerHTML = html;
+  //extra credit : updates background color with random color
+  let randomHex = Math.floor(Math.random()*16777215).toString(16); //let the random hex code be assigned to a  random number between 0 and 16777215 and covert to a string with a parameter of 16
+
+  document.body.style.backgroundColor = "#" + randomHex; //style the body with #randomHex
 
 }
 printQuote();
