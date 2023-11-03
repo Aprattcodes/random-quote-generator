@@ -3,9 +3,7 @@ Treehouse FSJS Techdegree:
 project 1 - A Random Quote Generator
 ******************************************/
 
-// For assistance: 
-  // Check the "Project Resources" section of the project instructions
-  // Reach out in your Slack community - https://treehouse-fsjs-102.slack.com/app_redirect?channel=chit-chat
+// Grade anticipated : exceeds
 
 /*** 
  * `quotes` array 
@@ -56,16 +54,6 @@ function getRandomQuote(){
 /***
  * `printQuote` function
 ***/
-//calls getRandomQuote()
-//use the returned quote object to build a string of HTML and quote props
-//use the string to display a random quote in the browser*/
-
-//create a variable to store random quote object returned from getRandomQuote()
-
-//erase-let randomQuote = quotes[getRandomQuote()]; //randomQuote is assigned to a quote with an index of a random number from the getRandomQuote function
-
-
-
 function printQuote(){
   // Get a random quote
   let randomIndex = getRandomQuote();
@@ -80,16 +68,6 @@ function printQuote(){
   } else {
     html+= `</p>` //adss closing p element
    }
-  // return html; //returns html when caliing the printQuote() function
-  // if (randomQuote.citation !== undefined) {
-  //   html += `<span class="citation">${randomQuote.citation}</span>`;
-  // }
-  // if (randomQuote.year !== undefined) {
-  //   html += `<span class="year">${randomQuote.year}</span>`;
-  // }
-
-  // // Close the HTML elements
-  // html += `</p>`;
 
   // Update the quote-box with the new quote
   document.getElementById('quote-box').innerHTML = html;
@@ -99,7 +77,8 @@ function printQuote(){
   document.body.style.backgroundColor = "#" + randomHex; //style the body with #randomHex
 
 }
-printQuote();
+//extra credit: adds timing function with the setInterval() method to print a new quote to the page at regular intervals
+const intervalID = setInterval(printQuote, 1200);
 /***
  * click event listener for the print quote button
  * DO NOT CHANGE THE CODE BELOW!!
